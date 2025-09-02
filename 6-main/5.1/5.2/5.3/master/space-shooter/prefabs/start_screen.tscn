@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuovj8m1ugpnv"]
+
+[ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_hhfn1"]
+[ext_resource type="Texture2D" uid="uid://cv2jal75doyf8" path="res://SpaceShooterPack/PNG/download.jpg" id="2_8tryi"]
+
+[node name="Start screen" type="Node2D"]
+script = ExtResource("1_hhfn1")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 1144.0
+offset_bottom = 174.0
+theme_override_font_sizes/font_size = 100
+text = "Play"
+
+[node name="Download" type="Sprite2D" parent="."]
+position = Vector2(577, 410)
+scale = Vector2(4.39695, 2.44792)
+texture = ExtResource("2_8tryi")

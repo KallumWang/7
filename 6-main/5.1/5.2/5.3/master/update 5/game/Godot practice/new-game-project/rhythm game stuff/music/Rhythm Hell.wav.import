@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bej0cei3aryf"
+path="res://.godot/imported/Rhythm Hell.wav-4289a7df2f69d6bd5472d274c045adb6.sample"
+
+[deps]
+
+source_file="res://rhythm game stuff/music/Rhythm Hell.wav"
+dest_files=["res://.godot/imported/Rhythm Hell.wav-4289a7df2f69d6bd5472d274c045adb6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

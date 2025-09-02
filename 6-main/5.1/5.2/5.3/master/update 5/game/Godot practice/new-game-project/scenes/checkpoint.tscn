@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq32abu13byfd"]
+
+[ext_resource type="Script" path="res://script/checkpoint.gd" id="1_iub55"]
+[ext_resource type="Texture2D" uid="uid://do74166t8mkpg" path="res://sprites/gardevoir.png" id="2_iptkv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b16h7"]
+radius = 88.0
+height = 200.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_iub55")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_iptkv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_b16h7")

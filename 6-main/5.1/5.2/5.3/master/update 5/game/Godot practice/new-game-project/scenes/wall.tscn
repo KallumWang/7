@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://gylpxdc3gybg"]
+
+[ext_resource type="Script" path="res://script/spike.gd" id="1_cvxf0"]
+[ext_resource type="Texture2D" uid="uid://cbkrgal1iltx8" path="res://sprites/Zeus cloud.png" id="2_x57bm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmdym"]
+size = Vector2(181, 316)
+
+[node name="Wall" type="Area2D"]
+position = Vector2(353, -190)
+script = ExtResource("1_cvxf0")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(33, 579)
+scale = Vector2(6.25, 9.125)
+texture = ExtResource("2_x57bm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(33.5, 578)
+shape = SubResource("RectangleShape2D_bmdym")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

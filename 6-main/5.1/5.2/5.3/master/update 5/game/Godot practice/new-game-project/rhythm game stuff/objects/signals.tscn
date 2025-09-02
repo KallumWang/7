@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb7ia8bnx00ns"]
+
+[ext_resource type="Script" path="res://rhythm game stuff/objects/signals.gd" id="1_v8x51"]
+
+[node name="Signals" type="Node2D"]
+script = ExtResource("1_v8x51")

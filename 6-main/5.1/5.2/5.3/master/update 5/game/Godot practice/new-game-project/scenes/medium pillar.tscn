@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceinjc682rogu"]
+
+[ext_resource type="Texture2D" uid="uid://btsd6naacynov" path="res://sprites/coluimn.png" id="1_oc2ee"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(10.5, 64.7814)
+scale = Vector2(0.0615234, 0.094003)
+texture = ExtResource("1_oc2ee")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-4.82186, 41.3168)
+scale = Vector2(0.948429, 0.776932)
+polygon = PackedVector2Array(28.2803, 123.155, 28.2803, 121.868, 27.2259, 112.858, 27.2259, 21.4732, 27.2259, 2.16647, 33.5522, -33.8727, -1.2422, -33.8727, 2.9753, 3.45359, 6.13842, 24.0474, 4.02967, 121.868, 5.08405, 97.4129, 5.08405, 93.5516, 6.13842, 102.561, 4.02967, 123.155)

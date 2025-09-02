@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dycivmma4ewyp"]
+
+[ext_resource type="Script" path="res://script/spike.gd" id="1_gnad4"]
+[ext_resource type="Texture2D" uid="uid://244hgoko5r8v" path="res://sprites/enemy stationary.png" id="2_pg762"]
+
+[node name="Spike" type="Area2D"]
+position = Vector2(62, 29)
+script = ExtResource("1_gnad4")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(101.5, 201.5)
+scale = Vector2(4.53125, 4.15625)
+texture = ExtResource("2_pg762")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-4.6125, 49.9286)
+scale = Vector2(0.74375, 0.839096)
+polygon = PackedVector2Array(42, 200, 44, 268, 242, 268, 242, 199, 233, 206, 225, 206, 225, 197, 237, 185, 219, 195, 211, 195, 225, 171, 224, 136, 216, 130, 191, 129, 179, 147, 177, 167, 154, 193, 147, 190, 146, 179, 150, 174, 150, 166, 141, 161, 144, 155, 143, 150, 134, 149, 134, 144, 128, 145, 127, 155, 136, 162, 134, 169, 141, 171, 139, 176, 133, 177, 133, 193, 114, 178, 105, 165, 106, 144, 99, 144, 101, 132, 92, 132, 92, 128, 66, 127, 65, 133, 60, 134, 58, 171, 71, 191, 63, 194, 52, 183, 45, 183, 48, 189, 59, 203, 51, 205)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2oboicpgy0g5"]
+
+[ext_resource type="Texture2D" uid="uid://c23pnkrtmgfg8" path="res://sprites/parallax-forest-back-trees-1.png.png" id="1_g8sjj"]
+[ext_resource type="Script" path="res://script/vn.gd" id="1_xp2m7"]
+[ext_resource type="PackedScene" uid="uid://bpy511rue6014" path="res://scenes/animation.tscn" id="2_a3kmd"]
+[ext_resource type="PackedScene" uid="uid://jc68a8df5n33" path="res://scenes/dialogue_ui.tscn" id="3_aa5a4"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_xp2m7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_g8sjj")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="Control" type="Control" parent="CanvasLayer/CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Character" parent="CanvasLayer/CanvasLayer2/Control" instance=ExtResource("2_a3kmd")]
+unique_name_in_owner = true
+position = Vector2(-13, 265)
+rotation = -6.28319
+
+[node name="DialogueUI" parent="CanvasLayer/CanvasLayer2" instance=ExtResource("3_aa5a4")]
+unique_name_in_owner = true
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1.0
+offset_bottom = 3.0
+
+[connection signal="next_pressed" from="CanvasLayer/CanvasLayer2/DialogueUI" to="." method="_on_dialogue_ui_next_pressed"]

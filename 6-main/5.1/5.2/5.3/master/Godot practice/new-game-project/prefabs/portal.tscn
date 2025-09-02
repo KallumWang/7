@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c71q1tdfck0uk"]
+
+[ext_resource type="Texture2D" uid="uid://do74166t8mkpg" path="res://sprites/gardevoir.png" id="1_asdik"]
+[ext_resource type="Script" path="res://script/portal.gd" id="1_qvep1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dgetc"]
+radius = 48.0
+height = 96.0
+
+[node name="Portal" type="Area2D"]
+script = ExtResource("1_qvep1")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(0.888889, 0.861111)
+texture = ExtResource("1_asdik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dgetc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

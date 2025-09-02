@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0mp12gjanqyj"
+path="res://.godot/imported/Mr_Beast.wav-73a7aa9b010faa96b07f374af9dec12a.sample"
+
+[deps]
+
+source_file="res://rhythm game stuff/music/Mr_Beast.wav"
+dest_files=["res://.godot/imported/Mr_Beast.wav-73a7aa9b010faa96b07f374af9dec12a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

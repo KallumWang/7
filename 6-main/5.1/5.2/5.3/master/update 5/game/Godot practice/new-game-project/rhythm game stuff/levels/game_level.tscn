@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8f1ign6hpicr"]
+
+[ext_resource type="Texture2D" uid="uid://1e56iruoegy2" path="res://rhythm game stuff/art/fnf-daddy-dearest-stage-background.jpg" id="1_22obh"]
+[ext_resource type="PackedScene" uid="uid://dfdglmltorqae" path="res://rhythm game stuff/objects/key_listener.tscn" id="1_h3xak"]
+[ext_resource type="PackedScene" uid="uid://dpc13ucm0i8fg" path="res://rhythm game stuff/levels/game_ui.tscn" id="2_l1p8s"]
+[ext_resource type="PackedScene" uid="uid://coqj034dvvbeu" path="res://rhythm game stuff/objects/level_editor.tscn" id="4_1wrej"]
+[ext_resource type="Theme" uid="uid://doo2b2qmxft0x" path="res://themes/theme.tres" id="5_ly5my"]
+[ext_resource type="Script" path="res://rhythm game stuff/levels/quit.gd" id="6_k63ov"]
+[ext_resource type="Script" path="res://rhythm game stuff/levels/button.gd" id="7_ppytv"]
+
+[sub_resource type="Environment" id="Environment_i5mjo"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+
+[node name="GameLevel" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [335.0, 0.0]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("1_22obh")
+metadata/_edit_lock_ = true
+
+[node name="KeyListener" parent="." instance=ExtResource("1_h3xak")]
+position = Vector2(-124, 230)
+key_name = "button_Q"
+metadata/_edit_lock_ = true
+
+[node name="KeyListener2" parent="." instance=ExtResource("1_h3xak")]
+position = Vector2(-44, 230)
+frame = 1
+key_name = "button_W"
+metadata/_edit_lock_ = true
+
+[node name="KeyListener3" parent="." instance=ExtResource("1_h3xak")]
+position = Vector2(36, 230)
+frame = 2
+key_name = "button_O"
+metadata/_edit_lock_ = true
+
+[node name="KeyListener4" parent="." instance=ExtResource("1_h3xak")]
+position = Vector2(116, 230)
+frame = 3
+key_name = "button_P"
+metadata/_edit_lock_ = true
+
+[node name="GameUI" parent="." instance=ExtResource("2_l1p8s")]
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i5mjo")
+
+[node name="LevelEditor" parent="." instance=ExtResource("4_1wrej")]
+
+[node name="Quit" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = -489.0
+offset_top = 122.0
+offset_right = -408.0
+offset_bottom = 174.0
+theme = ExtResource("5_ly5my")
+text = "QUIT"
+script = ExtResource("6_k63ov")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 285.0
+offset_top = -290.0
+offset_right = 605.0
+offset_bottom = -259.0
+theme = ExtResource("5_ly5my")
+text = "Free win if you are stuck or done"
+script = ExtResource("7_ppytv")

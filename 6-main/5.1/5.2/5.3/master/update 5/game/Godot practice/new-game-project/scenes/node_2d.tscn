@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnd4g4hgtj4lg"]
+
+[ext_resource type="PackedScene" uid="uid://cyjxi46yjcgm8" path="res://scenes/backup.tscn" id="1_lplj8"]
+[ext_resource type="Script" path="res://script/player.gd" id="2_3fcy5"]
+
+[node name="test" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_lplj8")]
+script = ExtResource("2_3fcy5")
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true

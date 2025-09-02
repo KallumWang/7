@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwlinj4e4fo6o"]
+
+[ext_resource type="Texture2D" uid="uid://btsd6naacynov" path="res://sprites/coluimn.png" id="1_8gpye"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d71ih"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="static body" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_d71ih")
+
+[node name="Sprite2D" type="Sprite2D" parent="static body"]
+position = Vector2(5.25, 36.5)
+scale = Vector2(0.0776367, 0.083912)
+texture = ExtResource("1_8gpye")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="static body"]
+polygon = PackedVector2Array(19, 101, 19, 81, 19, 56, 19, 17, 25, 10, 25, -8, -14, -8, -14, 11, -8, 19, -8, 76, -8, 95, -8, 101)

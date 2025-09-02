@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://doo2b2qmxft0x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70ash"]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 0.0
+bg_color = Color(0.350471, 8.42288e-08, 0.16443, 1)
+expand_margin_left = 6.0
+expand_margin_top = 1.0
+expand_margin_right = 5.0
+
+[resource]
+Button/colors/font_color = Color(0.898917, 0.0547326, 0.021256, 1)
+Button/colors/font_focus_color = Color(0.0556224, 0.0834528, 0.208109, 1)
+Button/colors/font_hover_color = Color(0.458488, 0.101011, 0.168106, 1)
+Button/colors/font_hover_pressed_color = Color(0.574487, 0.131193, 0.0368956, 1)
+Button/colors/font_outline_color = Color(0.201911, 0.240279, 0.13306, 1)
+Button/colors/font_pressed_color = Color(0.438184, 0.179884, 0.116003, 1)
+Button/font_sizes/font_size = 20
+Button/styles/normal = SubResource("StyleBoxFlat_70ash")

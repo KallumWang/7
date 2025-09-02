@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://01n5cce2xteq"]
+
+[ext_resource type="Script" path="res://script/back_and_forth.gd" id="1_oqicb"]
+[ext_resource type="Script" path="res://script/goomba.gd" id="2_4x3qw"]
+[ext_resource type="Texture2D" uid="uid://d366aac3t54cr" path="res://sprites/moving enemysprite.png" id="3_5ja48"]
+
+[sub_resource type="Curve2D" id="Curve2D_4nfas"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 64, 64, 0, 0, 0, 0, 256, 64)
+}
+point_count = 2
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4nfas")
+
+[node name="back and forth" type="PathFollow2D" parent="Path2D"]
+position = Vector2(64, 64)
+loop = false
+script = ExtResource("1_oqicb")
+
+[node name="Enemy" type="Area2D" parent="Path2D/back and forth"]
+script = ExtResource("2_4x3qw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/back and forth/Enemy"]
+position = Vector2(-5, -6)
+scale = Vector2(2.46875, 2.3125)
+texture = ExtResource("3_5ja48")
+
+[node name="Kill aura" type="CollisionPolygon2D" parent="Path2D/back and forth/Enemy"]
+polygon = PackedVector2Array(-29, -15, -36, -10, -33, -7, -37, -3, -40, 1, -40, 10, -35, 20, -30, 26, -29, 31, 19, 31, 25, 27, 19, 27, 30, 10, 30, 1, 21, -7, 25, -9, 19, -16, 3, -14, 15, -15, -12, -13, -17, -12, -26, -11, -22, -12)
+
+[node name="HeadArea" type="Area2D" parent="Path2D/back and forth/Enemy"]
+
+[node name="Head hitbox" type="CollisionPolygon2D" parent="Path2D/back and forth/Enemy/HeadArea"]
+position = Vector2(-1, 1)
+polygon = PackedVector2Array(-20, -13, 3, -15, -3, -28, -11, -35, -13, -34, -16, -35, -19, -32, -24, -29, -26, -18)
+
+[connection signal="body_entered" from="Path2D/back and forth/Enemy" to="Path2D/back and forth/Enemy" method="_on_body_entered"]
+[connection signal="body_entered" from="Path2D/back and forth/Enemy/HeadArea" to="Path2D/back and forth/Enemy" method="_on_head_area_body_entered"]
