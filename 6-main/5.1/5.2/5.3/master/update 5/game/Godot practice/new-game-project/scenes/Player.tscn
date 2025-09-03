@@ -140,9 +140,11 @@ position = Vector2(-13, 17)
 scale = Vector2(2.25, 2.8)
 sprite_frames = SubResource("SpriteFrames_ll830")
 animation = &"run"
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+metadata/_edit_lock_ = true
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 one_shot = true
@@ -150,3 +152,4 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-13, 27)
 shape = SubResource("CapsuleShape2D_ssli4")
+metadata/_edit_lock_ = true

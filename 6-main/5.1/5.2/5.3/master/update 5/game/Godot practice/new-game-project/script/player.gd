@@ -112,10 +112,10 @@ func _physics_process(delta):
 		if input_dir != 0:
 			velocity.x = input_dir * speed
 			# 👇 play walk or sprint sound depending on state
-			if sprinting:
-				AudioManager.play("res://sounds/sprint.ogg")   # Sprinting footsteps SFX here
-			else:
-				AudioManager.play("res://sfx/")     # Walking footsteps SFX here
+			#if sprinting:
+				#AudioManager.play("res://sfx/hero_walk_footsteps_stone.wav")   # Sprinting footsteps SFX here
+			#else:
+				#AudioManager.play("res://sfx/")     # Walking footsteps SFX here
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
 
@@ -139,8 +139,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# 👇 Landing sound (only when first touching ground after falling/jumping)
-	if on_floor and not was_on_floor:
-		AudioManager.play("res://sounds/land.ogg")   # Landing SFX here
+	#if on_floor and not was_on_floor:
+		#AudioManager.play("res://sounds/land.ogg")   # Landing SFX here
 
 	was_on_floor = on_floor
 
