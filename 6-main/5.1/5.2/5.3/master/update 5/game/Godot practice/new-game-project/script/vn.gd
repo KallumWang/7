@@ -46,4 +46,4 @@ func _on_dialogue_ui_next_pressed():
 		var next_scene_path = "res://level_2_tp.tscn"
 		
 		# Change the scene.
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		ScreenTransition.go_to_scene("game")

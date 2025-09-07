@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://dwhrwb2wlgppw"]
+[gd_scene load_steps=24 format=3 uid="uid://dwhrwb2wlgppw"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_qfjm1"]
 [ext_resource type="Texture2D" uid="uid://vgb6u5c65j3n" path="res://sprites/mc.png" id="2_7c5v6"]
 [ext_resource type="Texture2D" uid="uid://bmlche7bj8qo1" path="res://sprites/jump anim.png" id="3_32b62"]
+[ext_resource type="Texture2D" uid="uid://c7v5sjeq56mhg" path="res://scenes/mr beast.jpg" id="4_d7pnh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sadv2"]
 atlas = ExtResource("2_7c5v6")
@@ -131,6 +132,18 @@ animations = [{
 radius = 21.0
 height = 82.0
 
+[sub_resource type="Curve" id="Curve_eyc7o"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.129213, 35.6044), 0.0, 0.0, 0, 0, Vector2(0.342697, 257.143), 0.0, 0.0, 0, 0, Vector2(0.477528, -51.4285), 0.0, 0.0, 0, 0, Vector2(0.696629, 272.967), 0.0, 0.0, 0, 0, Vector2(0.803371, -43.5165), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_yrsrm"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.0617977, 360), 0.0, 0.0, 0, 0, Vector2(0.134831, -304.615), 0.0, 0.0, 0, 0, Vector2(0.196629, 193.846), 0.0, 0.0, 0, 0, Vector2(0.247191, -162.198), 0.0, 0.0, 0, 0, Vector2(0.303371, 178.022), 0.0, 0.0, 0, 0, Vector2(0.353933, -146.374), 0.0, 0.0, 0, 0, Vector2(0.44382, 98.9011), 1024.26, 1024.26, 0, 0, Vector2(0.460674, -130.549), 0.0, 0.0, 0, 0, Vector2(0.567416, 249.231), 0.0, 0.0, 0, 0, Vector2(0.646067, -178.022), 0.0, 0.0, 0, 0, Vector2(0.724719, 328.352), 0.0, 0.0, 0, 0, Vector2(0.820225, -43.5165), 0.0, 0.0, 0, 0, Vector2(0.88764, -217.582), 0.0, 0.0, 0, 0, Vector2(0.921348, 312.527), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 16
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-118, 94)
 script = ExtResource("1_qfjm1")
@@ -153,3 +166,26 @@ one_shot = true
 position = Vector2(-13, 27)
 shape = SubResource("CapsuleShape2D_ssli4")
 metadata/_edit_lock_ = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.105882)
+texture = ExtResource("4_d7pnh")
+emission_shape = 1
+emission_sphere_radius = 48.5
+direction = Vector2(1, 1)
+spread = 117.25
+gravity = Vector2(100, 980)
+initial_velocity_min = 262.63
+initial_velocity_max = 1000.0
+angular_velocity_min = 12.9
+angular_velocity_max = 695.69
+angular_velocity_curve = SubResource("Curve_eyc7o")
+linear_accel_min = 4.04
+linear_accel_max = 102.35
+radial_accel_min = -47.41
+radial_accel_max = 100.0
+tangential_accel_min = 2.9
+tangential_accel_max = 7.5
+angle_min = 101.8
+angle_max = 560.0
+angle_curve = SubResource("Curve_yrsrm")
